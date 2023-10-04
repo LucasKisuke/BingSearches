@@ -27,7 +27,11 @@ def main():
     driver.get("https://www.bing.com/")
     driver.maximize_window()
 
-    search_loop(driver, 61)
+    search_loop(driver, 41)
+
+    messagebox.showinfo("WARNING!", message)
+
+    search_loop(driver, 21)
 
     driver.close()
 
