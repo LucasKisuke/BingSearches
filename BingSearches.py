@@ -26,8 +26,9 @@ def main():
     driver = webdriver.Edge("msedgedriver.exe")
     driver.get("https://www.bing.com/")
     driver.maximize_window()
-
-    search_loop(driver, 41)
+    time.sleep(8)
+    
+    search_loop(driver, 35)
 
     messagebox.showinfo("WARNING!", message)
 
