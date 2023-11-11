@@ -1,7 +1,9 @@
 from selenium import webdriver
-from selenium.webdriver.edge import options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.edge.options import Options
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from tkinter import messagebox
 import string
 import random
@@ -23,9 +25,12 @@ def search_loop(driver, loops):
 
 
 def main():
-    driver = webdriver.Edge("msedgedriver.exe")
-    driver.get("https://www.bing.com/")
+    edge_path = EdgeChromiumDriverManager().install()
+
+    driver = webdriver.Edge(executable_path=edge_path)
     driver.maximize_window()
+
+    driver.get("https://www.bing.com/")
     time.sleep(8)
     
     search_loop(driver, 35)
