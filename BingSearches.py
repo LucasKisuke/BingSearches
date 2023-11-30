@@ -21,7 +21,8 @@ def search_loop(driver, loops):
         search_string = string_generator()
         element.send_keys(search_string)
         element.send_keys(Keys.RETURN)
-        time.sleep(.5)
+        time.sleep(3)
+        driver.get("https://www.bing.com/")
 
 
 def main():
