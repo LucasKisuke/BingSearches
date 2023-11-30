@@ -22,6 +22,7 @@ def search_loop(driver, loops):
         element.send_keys(search_string)
         element.send_keys(Keys.RETURN)
         time.sleep(3)
+        driver.get("https://www.google.com/")
         driver.get("https://www.bing.com/")
 
 
@@ -34,11 +35,11 @@ def main():
     driver.get("https://www.bing.com/")
     time.sleep(8)
     
-    search_loop(driver, 35)
+    search_loop(driver, 40)
 
     messagebox.showinfo("WARNING!", message)
 
-    search_loop(driver, 21)
+    search_loop(driver, 25)
 
     driver.close()
 
